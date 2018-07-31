@@ -1,5 +1,4 @@
-
-exports.up = function(knex, Promise) {
+exports.up = function (knex, Promise) {
     return knex.schema.createTable('resolutions', (table) => {
         table.increments('id')
         table.date('dueDate').notNullable()
@@ -7,6 +6,6 @@ exports.up = function(knex, Promise) {
     })
 };
 
-exports.down = function(knex, Promise) {
+exports.down = function (knex, Promise) {
     return knex.schema.dropTable('resolutions')
 };
