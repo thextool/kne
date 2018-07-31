@@ -12,7 +12,7 @@ router.get("/", (request, response, next) => {
 router.get("/:id", (request, response, next) => {
     queries.read(request.params.id).then(resolution => {
         resolution
-            ? response.json({resolution})
+            ? response.json({"resolution":resolution[0]})
             : response.status(404).json({message: 'Not found'})
     }).catch(next);
 });
